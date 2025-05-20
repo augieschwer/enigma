@@ -1,0 +1,7 @@
+#!/bin/bash
+MAIL=mail@domain.com
+RESULT=`hpacucli ctrl slot=1 pd all show | sed -n '6,9 p' | grep -v OK`
+if [ -n "$RESULT" ]; then
+    echo "$RESULT" | mail -s 'Raid Error' "$MAIL"
+    else echo "Raid is OK"
+fi
