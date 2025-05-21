@@ -6,8 +6,9 @@ if [ -n "$RESULT" ]; then
     echo "$RESULT"
     echo "$RESULT" | mail -s 'RAID array: ERROR' "$MAIL"
     else
-       echo "RAID array: OK"
-       RESULT=`hpacucli ctrl slot=0 pd all show | grep physicaldrive`
-       echo "$RESULT"
-       echo "$RESULT" | mail -s 'RAID array: OK' "$MAIL"
+# uncomment the following to test
+#       echo "RAID array: OK"
+#       RESULT=`hpacucli ctrl slot=0 pd all show | grep physicaldrive`
+#       echo "$RESULT"
+#       echo "$RESULT" | mail -s 'RAID array: OK' "$MAIL"
 fi
